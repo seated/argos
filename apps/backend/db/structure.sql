@@ -621,7 +621,7 @@ CREATE TABLE public.github_installations (
     "updatedAt" timestamp with time zone NOT NULL,
     "githubId" integer NOT NULL,
     deleted boolean DEFAULT false NOT NULL,
-    "githubToken" character varying(255),
+    "githubToken" text,
     "githubTokenExpiresAt" timestamp with time zone,
     app text DEFAULT 'main'::text NOT NULL,
     proxy boolean DEFAULT false NOT NULL,
@@ -3862,3 +3862,4 @@ INSERT INTO public.knex_migrations(name, batch, migration_time) VALUES ('2026021
 INSERT INTO public.knex_migrations(name, batch, migration_time) VALUES ('20260216200736_enforce-sso.js', 1, NOW());
 INSERT INTO public.knex_migrations(name, batch, migration_time) VALUES ('20260219170000_project-auto-ignore.js', 1, NOW());
 INSERT INTO public.knex_migrations(name, batch, migration_time) VALUES ('20260222100000_team-saml-expiration-check.js', 1, NOW());
+INSERT INTO public.knex_migrations(name, batch, migration_time) VALUES ('20260709120000_github-installation-token-text.js', 1, NOW());
